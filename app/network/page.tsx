@@ -20,14 +20,6 @@ const icon = L.icon({
     popupAnchor: [0, 0], // point from which the popup should open relative to the iconAnchor
   });
 
-// Fix for default marker icon
-//delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('../../public/cloudflare.png'),
-  iconUrl: require('../../public/cloudflare.png'),
-  shadowUrl: require('../../public/cloudflare.png'),
-});
-
 interface PopLocation {
   iata: string;
   lat: number;
