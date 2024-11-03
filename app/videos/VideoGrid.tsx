@@ -12,7 +12,7 @@ interface Video {
     name: string;
   };
   playback: {
-    url: string; // assuming playback URL is available in API response
+    hls: string; // assuming playback URL is available in API response
   }
 }
 
