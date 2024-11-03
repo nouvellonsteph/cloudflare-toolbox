@@ -11,8 +11,11 @@ interface Video {
   meta: {
     name: string;
   };
-  playback: string; // assuming playback URL is available in API response
+  playback: {
+    url: string; // assuming playback URL is available in API response
+  }
 }
+
 
 export default function VideoGrid() {
   const [videos, setVideos] = useState<Video[]>([]);
@@ -55,7 +58,10 @@ export default function VideoGrid() {
   }, [apiToken]);
 
   const handleClickVideo = (video: Video) => {
-    setSelectedVideo(video);
+    setSelectedVideo({
+      ...video,
+      playback: { hls: video.playback.hls }, // Adjusting playback to match selectedVideo type
+    });
   };
 
   const handleClosePlayer = () => {
