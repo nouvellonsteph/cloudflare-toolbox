@@ -12,6 +12,7 @@ const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapCo
 const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
 const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
 const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ssr: false });
+//const L = dynamic(() => import('leaflet').then(mod => mod.Popup), { ssr: false });
 
 const icon = L.icon({
     iconUrl: '../../cloudflare.png',
