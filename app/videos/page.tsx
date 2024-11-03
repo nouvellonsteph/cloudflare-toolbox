@@ -8,6 +8,7 @@ import Link from 'next/link';
 export default function VideosPage() {
   const { apiToken, setApiToken } = useVideoStore();
   const [inputToken, setInputToken] = useState(apiToken);
+  //const [inputAccountId, setInputAccountId] = useState(accountId);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,7 +30,26 @@ export default function VideosPage() {
       </p>
 
       <form onSubmit={handleSubmit} className="mb-8">
-        <div className="max-w-xl">
+        <div className="max-w-xl ">
+          <label
+            htmlFor="apiToken"
+            className="block text-sm font-medium text-cf-dark dark:text-white"
+          >
+            Account ID
+          </label>
+          <div className="mt-1 flex rounded-md shadow-sm">
+            <input
+              type="text"
+              name="accountId"
+              id="accountId"
+              value={inputToken}
+              onChange={(e) => setInputToken(e.target.value)}
+              className="text-cf-gray flex-1 min-w-0 block w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-cf-orange focus:border-cf-orange sm:text-sm"
+              placeholder="Enter your Cloudflare account ID"
+            />
+          </div>
+        </div>
+        <div className="max-w-xl mt-4">
           <label
             htmlFor="apiToken"
             className="block text-sm font-medium text-cf-dark dark:text-white"
@@ -46,14 +66,13 @@ export default function VideosPage() {
               className="text-cf-gray flex-1 min-w-0 block w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-cf-orange focus:border-cf-orange sm:text-sm"
               placeholder="Enter your Cloudflare API token"
             />
-
-            <button
+          </div>
+          <button
               type="submit"
-              className="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-cf-orange hover:bg-cf-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cf-orange"
+              className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-cf-orange hover:bg-cf-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cf-orange"
             >
               Save
             </button>
-          </div>
         </div>
       </form>
 

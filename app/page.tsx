@@ -23,7 +23,7 @@ const features = [
   {
     title: 'Cloudflare Network',
     description: 'Navigate Cloudflare network of POP',
-    href: '#',
+    href: '/network',
     icon: '🌐',
   },
 ];
