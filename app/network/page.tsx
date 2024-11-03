@@ -21,7 +21,7 @@ const icon = L.icon({
   });
 
 // Fix for default marker icon
-delete L.Icon.Default.prototype._getIconUrl;
+//delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require('../../public/cloudflare.png'),
   iconUrl: require('../../public/cloudflare.png'),
