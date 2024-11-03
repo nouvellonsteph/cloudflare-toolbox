@@ -28,7 +28,7 @@ export default function VideosPage() {
                 className="text-cf-orange"
               >
                 API token
-              </Link>{' '} allowing access to Cloudflare stream (make it read-only to be on the safe-side) and visualize all the videos existing on the account. The token won't be stored anywhere but your own machine
+              </Link>allowing access to Cloudflare stream (make it read-only to be on the safe-side) and visualize all the videos existing on the account. The token won't be stored anywhere but your own machine
       </p>
 
       <form onSubmit={handleSubmit} className="mb-8">
