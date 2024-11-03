@@ -7,9 +7,9 @@ import Hls from 'hls.js';
 interface Video {
   uid: string;
   thumbnail: string;
+  duration: number;
   meta: {
     name: string;
-    duration: number;
   };
   playback: string; // assuming playback URL is available in API response
 }
