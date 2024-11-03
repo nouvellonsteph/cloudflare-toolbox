@@ -28,8 +28,17 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require('../../public/cloudflare.png'),
 });
 
+interface PopLocation {
+  iata: string;
+  lat: number;
+  lon: number;
+  cca2: string;
+  region: string;
+  city: string;
+}
+
 const PopLocationsMap = () => {
-  const [popLocations, setPopLocations] = useState([]);
+  const [popLocations, setPopLocations] = useState<PopLocation[]>([]);
   const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
