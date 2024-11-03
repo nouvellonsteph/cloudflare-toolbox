@@ -58,10 +58,7 @@ export default function VideoGrid() {
   }, [apiToken]);
 
   const handleClickVideo = (video: Video) => {
-    setSelectedVideo({
-      ...video,
-      playback: { hls: video.playback.hls }, // Adjusting playback to match selectedVideo type
-    });
+    setSelectedVideo(video);
   };
 
   const handleClosePlayer = () => {
