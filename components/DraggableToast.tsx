@@ -1,25 +1,35 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const DraggableToast = ({ popCount, countryCount, regionCount, onClose }) => {
+// Define the props interface
+interface DraggableToastProps {
+  popCount: number;
+  countryCount: number;
+  regionCount: number;
+  onClose: () => void; // Assuming onClose is a function that takes no arguments and returns void
+}
+
+const DraggableToast: React.FC<DraggableToastProps> = ({ popCount, countryCount, regionCount, onClose }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
-  const toastRef = useRef(null);
+  const toastRef = useRef<HTMLDivElement | null>(null);
 
-  const handleMouseDown = (e) => {
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
     setOffset({
-      x: e.clientX - toastRef.current.getBoundingClientRect().left,
-      y: e.clientY - toastRef.current.getBoundingClientRect().top,
+      x: e.clientX - toastRef.current!.getBoundingClientRect().left,
+      y: e.clientY - toastRef.current!.getBoundingClientRect().top,
     });
-    e.stopPropagation(); // Prevent event from reaching the map
-    e.preventDefault(); // Prevent text selection
+    e.stopPropagation();
+    e.preventDefault();
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: MouseEvent) => {
     if (isDragging) {
       const x = e.clientX - offset.x;
       const y = e.clientY - offset.y;
-      toastRef.current.style.transform = `translate(${x}px, ${y}px)`;
+      if (toastRef.current) {
+        toastRef.current.style.transform = `translate(${x}px, ${y}px)`;
+      }
     }
   };
 
@@ -27,7 +37,6 @@ const DraggableToast = ({ popCount, countryCount, regionCount, onClose }) => {
     setIsDragging(false);
   };
 
-  // Attach mousemove and mouseup events to the window
   useEffect(() => {
     if (isDragging) {
       window.addEventListener('mousemove', handleMouseMove);
@@ -51,7 +60,7 @@ const DraggableToast = ({ popCount, countryCount, regionCount, onClose }) => {
         top: '20px',
         right: '20px',
         cursor: isDragging ? 'grabbing' : 'grab',
-        zIndex: 10000, // Ensure this is higher than the map
+        zIndex: 10000,
       }}
       onMouseDown={handleMouseDown}
     >
@@ -64,10 +73,7 @@ const DraggableToast = ({ popCount, countryCount, regionCount, onClose }) => {
       <div className="text-cf-gray">
         <strong>{regionCount} Regions</strong>
       </div>
-      <button
-        onClick={onClose}
-        className="mt-2 text-red-500 hover:underline"
-      >
+      <button onClick={onClose} className="mt-2 text-red-500 hover:underline">
         Close
       </button>
     </div>
