@@ -7,7 +7,7 @@ import { ThemeProvider } from '../components/ThemeProvider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'CloudApp - Video Management Platform',
+  title: 'Cloudflare toolbox',
   description: 'A Cloudflare-inspired video management platform',
   icons: {
     icon: '/favicon.png',

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useVideoStore } from '@/lib/store';
 import VideoGrid from './VideoGrid';
+import Link from 'next/link';
 
 export default function VideosPage() {
   const { apiToken, setApiToken } = useVideoStore();
@@ -18,6 +19,14 @@ export default function VideosPage() {
       <h1 className="text-3xl font-bold text-cf-dark dark:text-white mb-8">
         Video Management
       </h1>
+      <p className="text-cf-dark dark:text-white mb-8">
+              Input an <Link
+                href="https://developers.cloudflare.com/fundamentals/api/get-started/create-token/"
+                className="text-cf-orange"
+              >
+                API token
+              </Link>{' '} allowing access to Cloudflare stream (make it read-only to be on the safe-side) and visualize all the videos existing on the account. The token won't be stored anywhere but your own machine
+      </p>
 
       <form onSubmit={handleSubmit} className="mb-8">
         <div className="max-w-xl">
