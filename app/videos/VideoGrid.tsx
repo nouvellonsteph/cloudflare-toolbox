@@ -25,7 +25,7 @@ export default function VideoGrid() {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://apicorsproxy.justalittlebyte.ovh/client/v4/accounts/121287a0c6e6260ec930655e6b39a3a8/stream`,
+        `https://apicorsproxy.justalittlebyte.ovh/client/v4/accounts/${accountId}/stream`,
         {
           headers: {
             Authorization: `Bearer ${apiToken}`,

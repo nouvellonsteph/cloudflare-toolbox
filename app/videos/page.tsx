@@ -46,6 +46,7 @@ export default function VideosPage() {
               className="text-cf-gray flex-1 min-w-0 block w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-cf-orange focus:border-cf-orange sm:text-sm"
               placeholder="Enter your Cloudflare API token"
             />
+
             <button
               type="submit"
               className="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-cf-orange hover:bg-cf-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cf-orange"
