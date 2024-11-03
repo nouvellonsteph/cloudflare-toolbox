@@ -7,11 +7,13 @@ import Link from 'next/link';
 
 export default function VideosPage() {
   const { apiToken, setApiToken } = useVideoStore();
+  const { accountId, setAccountId } = useVideoStore();
   const [inputToken, setInputToken] = useState(apiToken);
-  //const [inputAccountId, setInputAccountId] = useState(accountId);
+  const [inputAccountId, setInputAccountId] = useState(accountId);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setAccountId(inputAccountId)
     setApiToken(inputToken);
   };
 
@@ -42,8 +44,8 @@ export default function VideosPage() {
               type="text"
               name="accountId"
               id="accountId"
-              value={inputToken}
-              onChange={(e) => setInputToken(e.target.value)}
+              value={inputAccountId}
+              onChange={(e) => setInputAccountId(e.target.value)}
               className="text-cf-gray flex-1 min-w-0 block w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-cf-orange focus:border-cf-orange sm:text-sm"
               placeholder="Enter your Cloudflare account ID"
             />

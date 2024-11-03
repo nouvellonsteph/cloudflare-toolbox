@@ -54,17 +54,16 @@ const DraggableToast = ({ popCount, countryCount, regionCount, onClose }) => {
         zIndex: 10000, // Ensure this is higher than the map
       }}
       onMouseDown={handleMouseDown}
-      onMouseLeave={handleMouseUp} // End dragging when mouse leaves
     >
-      <div className= "text-cf-gray">
+      <div className="text-cf-gray">
         <strong>{popCount} POPs</strong>
       </div>
-      <div className= "text-cf-gray">
+      <div className="text-cf-gray">
         <strong>{countryCount} Countries</strong>
-        </div>
-      <div className= "text-cf-gray">
+      </div>
+      <div className="text-cf-gray">
         <strong>{regionCount} Regions</strong>
-        </div>
+      </div>
       <button
         onClick={onClose}
         className="mt-2 text-red-500 hover:underline"

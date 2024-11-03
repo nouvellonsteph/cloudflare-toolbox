@@ -20,6 +20,7 @@ export default function VideoGrid() {
   const [error, setError] = useState<string | null>(null);
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null); // Track clicked video
   const { apiToken } = useVideoStore();
+  const { accountId } = useVideoStore();
 
   const fetchVideos = async () => {
     try {
