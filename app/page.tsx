@@ -1,30 +1,30 @@
 import Link from 'next/link';
-import { VideoCamera, Graph, Lock, Globe } from 'cloudflare/component-icon';
+//import { VideoCamera, Graph, Lock, Globe } from 'cloudflare/component-icon';
 
 const features = [
   {
     title: 'Cloudflare Stream',
     description: 'Manage and stream your videos with Cloudflare Stream',
     href: '/videos',
-    icon: <VideoCamera className="text-4xl mb-4" />,
+    icon: '📹',
   },
   {
     title: 'Analytics',
     description: 'Visualize your Cloudflare analytics using GraphQL technology',
     href: '#',
-    icon: <Graph className="text-4xl mb-4" />,
+    icon: '📈',
   },
   {
     title: 'HMAC Signature',
     description: 'Craft and debug HMAC signatures with Cloudflare Firewall',
     href: '#',
-    icon: <Lock className="text-4xl mb-4" />,
+    icon: '🔐',
   },
   {
     title: 'Cloudflare Network',
     description: 'Navigate Cloudflare network of POP',
     href: '#',
-    icon: <Globe className="text-4xl mb-4" />,
+    icon: '🌐',
   },
 ];
 
