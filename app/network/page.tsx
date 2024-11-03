@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import DraggableToast from '../../components/DraggableToast.tsx'; // Import the DraggableToast component
+import DraggableToast from '../../components/DraggableToast'; // Import the DraggableToast component
 
 // Dynamic import for MapContainer to ensure it's only loaded on the client-side
 const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
